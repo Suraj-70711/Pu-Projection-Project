@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Suraj">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Competetion</title>
+</head>
+
+<body>
+    <!-- Intro Page -->
+    <div id="intro-page" onclick="showTeamNamesForm()">
+        <h1>Projection 2025</h1>
+        <h1>Electromesh</h1>
+    </div>
+
+    <!-- Team Names Form -->
+    <div id="team-names-form">
+        <h1>Quiz Competetion</h1>
+        <h2>Enter Team Names</h2>
+        <input type="text" id="teamA" placeholder="Enter Team A Name" required>
+        <input type="text" id="teamB" placeholder="Enter Team B Name" required>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Container -->
+    <div id="question-container">
+        <h1>Quiz Competetion</h1>
+        <div id="scoreboard">
+            <div class="score"><span id="teamAName"></span> SCORES: <span id="scoreA">0</span></div>
+            <div class="score"><span id="teamBName"></span> SCORES: <span id="scoreB">0</span></div>
+        </div>
+        <div id="question">Loading question...</div>
+        <div id="loading-spinner"></div>
+        <div class="options" id="options"></div>
+        <div id="winner"></div>
+        <div id="controls">
+            <button onclick="submitAnswer()">Skip Question</button>
+            <button onclick="resetQuiz()">Reset</button>
+        </div>
+    </div>
+
+    <div id="confetti"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

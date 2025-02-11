@@ -1,0 +1,423 @@
+/* Your existing CSS styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+#intro-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    background-image: url(detailed-appearance-white-ai-robot-600nw-2039219918.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Added for positioning of images */
+}
+
+#intro-page h1 {
+    font-size: 5rem;
+    margin: 1rem 0;
+    transition: transform 0.3s ease;
+}
+
+#intro-page h1:hover {
+    transform: scale(1.05);
+}
+
+/* New styles for images and animations */
+.intro-image {
+    width: 150px;
+    /* Adjust size as needed */
+    animation: bounce 1.5s infinite alternate;
+    margin: 1rem;
+}
+
+#heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #00b4d8, #90e0ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(144, 224, 239, 0.5);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+    margin-right: 2rem;
+}
+
+#team-names-form {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 180, 216, 0.2);
+    text-align: center;
+}
+
+#team-names-form input {
+    width: 80%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+#team-names-form button {
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #00b4d8, #0077b6);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#team-names-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+}
+
+#question-container {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 180, 216, 0.2);
+}
+
+#question {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.options button {
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.options button:hover {
+    background: rgba(0, 180, 216, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    margin: 2rem 0;
+    padding: 1.5rem 3rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #00b4d8, #90e0ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+button[onclick="submitAnswer()"] {
+    background: linear-gradient(45deg, #00b4d8, #0077b6);
+    color: white;
+}
+
+button[onclick="resetQuiz()"] {
+    background: linear-gradient(45deg, #ff477e, #ff002b);
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Congratulations Page Styling */
+#winner {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    animation: winnerPulse 1.5s ease-in-out infinite;
+    background: linear-gradient(45deg, #00b4d8, #90e0ef);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 180, 216, 0.5);
+    border: 3px solid #ffffff;
+    line-height: 1.4;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+#winner::before {
+    content: "🏆";
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.winner-message {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sub-message {
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin: 1rem 0;
+}
+
+.losing-team-message {
+    font-size: 1.5rem;
+    color: #ffffff;
+    background: rgba(26, 26, 46, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    border: 1px solid #00b4d8;
+}
+
+#winner::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00b4d8, #90e0ef);
+    margin-top: 1rem;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 15px rgba(144, 224, 239, 0.5);
+    }
+
+    to {
+        text-shadow: 0 0 25px rgba(144, 224, 239, 0.8),
+            0 0 35px rgba(144, 224, 239, 0.6);
+    }
+}
+
+/* Enhanced Winner Pulse Animation */
+@keyframes winnerPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(0, 180, 216, 0.5);
+    }
+
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 50px rgba(0, 180, 216, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(0, 180, 216, 0.5);
+    }
+}
+
+/* Spinner Animation */
+#loading-spinner {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #00b4d8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+/* Enhanced Confetti Animation */
+.confetti {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #ffd700;
+    animation: confettiFall 4s linear infinite;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+/* Add styles for GIFs */
+.intro-gif {
+    width: 200px;
+    /* Adjust size as needed */
+    margin: 1rem;
+    animation: spin 5s linear infinite;
+    /* Optional spinning animation */
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg) scale(0.5);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #question-container {
+        padding: 1.5rem;
+    }
+
+    #question {
+        font-size: 1.4rem;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    #scoreboard {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    #winner {
+        font-size: 1.8rem;
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .winner-message {
+        font-size: 1.8rem;
+    }
+
+    .sub-message {
+        font-size: 1.4rem;
+    }
+
+    .losing-team-message {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    #winner::before {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #winner {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .winner-message {
+        font-size: 1.6rem;
+    }
+}
